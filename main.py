@@ -22,8 +22,8 @@ async def predict(request: Request):
     data = await request.json()
     answers = data.get("answers", [])
 
-    if not isinstance(answers, list) or len(answers) != 42:
-        return {"error": "Invalid input: Expected a list of 42 numeric answers."}
+    if not isinstance(answers, list) or len(answers) != 60:
+        return {"error": "Invalid input: Expected a list of 60 numeric answers."}
 
     try:
         mbti_type = predict_mbti(answers)
